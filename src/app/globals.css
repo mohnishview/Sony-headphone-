@@ -2,22 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #050505;
+    --foreground: #ffffff;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  /* Smooth scrolling disabled natively because we use Framer Motion */
+}
+
+/* Hide scrollbar for a seamless, cinematic feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 @layer utilities {
